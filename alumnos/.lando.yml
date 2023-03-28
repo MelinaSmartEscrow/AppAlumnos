@@ -1,0 +1,4 @@
+name: alumnos
+recipe: lamp
+config:
+  webroot: ./public/

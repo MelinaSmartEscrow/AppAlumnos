@@ -1,0 +1,26 @@
+{{ form_start(form) }}
+
+    <div class="mb-3 col-sm-6">
+        <h6 style="font-weight: bold; color: #3d3d5c">Nombre</h6>
+        {{ form_widget(form.nombre, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <div class="mb-3 col-sm-6">
+        <h6 style="font-weight: bold; color: #3d3d5c">Apellido</h6>
+        {{ form_widget(form.apellido, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <div class="mb-3 col-sm-6">
+        <h6 style="font-weight: bold; color: #3d3d5c">Edad</h6>
+        {{ form_widget(form.edad, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <div class="mb-3 col-sm-6">
+        <h6 style="font-weight: bold; color: #3d3d5c">DNI</h6>
+        {{ form_widget(form.dni, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <div class="p-2 g-col-6">
+    <button class="btn btn-primary">{{ button_label|default('Guardar') }}</button>
+    </div>
+{{ form_end(form) }}

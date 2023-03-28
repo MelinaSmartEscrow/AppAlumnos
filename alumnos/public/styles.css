@@ -1,0 +1,12 @@
+/* Ejemplo de combinación de colores en CSS */
+
+body {
+    /*background: linear-gradient(to right, #669999 0%, #ff9999 100%);*/
+    background-color: #b3afaf;
+  }
+
+h1 {
+    font-weight: bold;
+  }
+  
+  

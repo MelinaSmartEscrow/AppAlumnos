@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alumnos{% endblock %}
+
+{% block body %}
+    <h1 style="font-weight: bold; color: #3d3d5c">Alumnos</h1>
+
+    <table class="table table-secondary">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Dni</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for alumno in alumnos %}
+            <tr>
+                <td>{{ alumno.id }}</td>
+                <td>{{ alumno.nombre }}</td>
+                <td>{{ alumno.apellido }}</td>
+                <td>{{ alumno.edad }}</td>
+                <td>{{ alumno.dni }}</td>
+                <td>
+                    <a class="btn btn-info btn-sm"  role="button" href="{{ path('app_alumno_show', {'id': alumno.id}) }}">Mostrar</a>
+                    <a class="btn btn-success btn-sm" role="button" href="{{ path('app_alumno_edit', {'id': alumno.id}) }}">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">No hay registros</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="p-2">
+        <a class="btn btn-primary" role="button" href="{{ path('app_alumno_new') }}">Crear nuevo +</a>
+    </div>
+{#
+<div class="p-2">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+#}
+
+{{ knp_pagination_render(alumnos) }}
+{% endblock %}
